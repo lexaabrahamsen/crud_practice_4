@@ -1,6 +1,6 @@
-<form action="/photos/<%= @photo.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <p>name: <input type="text" name="name" value="<%= @photo.name %>"></p>
-  <p>width: <input type="text" name="width" value="<%= @photo.width %>"></p>
-  <p>height: <input type="text" name="height" value="<%= @photo.height %>"></p>
-</form>
+{
+  id: @photo.id,
+  name: @photo.name,
+  width: @photo.width,
+  height: @photo.height
+}

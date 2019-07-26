@@ -21,17 +21,21 @@ class Api::PhotosController < ApplicationController
     render "show.json.jb"
   end
 
-  def edit
-    @photo = Photo.find_by(id: params[:id])
+  def update
+    the_id = params[:id]
+    @photo = Photo.find_by(id: the_id)
+    @photo.name = params[:input_name]
+    @photo.width = params[:width]
+    @photo.height = params[:input_height]
+    @photo.save
+    render "update.json.jb"
   end
 
-  def update
-    @photo = Photo.find_by(id: params[:id])
-    @photo.update(
-    name: params[:title],
-    width: params[:width],
-    height: params[:height]
-    )
-    redirect_to "/photos/#{@photo.id}"
+  def destroy
+    the_id = params[:id]
+    photo = Photo.find_by(id: the_id)
+
+    photo.destroy
+    render "destroy.json.jb"
   end
 end 
