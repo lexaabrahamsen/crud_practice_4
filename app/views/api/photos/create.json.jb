@@ -2,5 +2,6 @@
   id: @photo.id,
   name: @photo.name,
   width: @photo.width,
-  height: @photo.height
+  height: @photo.height,
+  price: @photo.price
 }
