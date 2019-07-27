@@ -9,7 +9,7 @@ class Api::PhotosController < ApplicationController
     name: params[:input_name],
     width: params[:input_width],
     height: params[:input_height],
-    price: params[:inpur_price]
+    price: params[:input_price]
   )
 
   @photo.save
@@ -28,7 +28,7 @@ class Api::PhotosController < ApplicationController
     @photo.name = params[:input_name]
     @photo.width = params[:width]
     @photo.height = params[:input_height]
-    @photo.price = params[:inpur_price]
+    @photo.price = params[:input_price]
     @photo.save
     render "update.json.jb"
   end
