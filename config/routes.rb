@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   get "/photos/:id/edit" => "photos#edit"
   patch "/photos/:id" => "photos#update"
   delete "/photos/:id" => "photos#destroy"
+
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
   end
 end
